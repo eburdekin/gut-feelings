@@ -1,5 +1,7 @@
 // src/routes/auth.js
 
+// needs to be tested
+
 import express from "express";
 import { check, validationResult } from "express-validator";
 
