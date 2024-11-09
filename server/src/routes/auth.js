@@ -1,7 +1,5 @@
 // src/routes/auth.js
 
-// needs to be tested
-
 import express from "express";
 import { check, validationResult } from "express-validator";
 
@@ -37,7 +35,7 @@ router.post(
       res.status(200).json({ message: "Check your email for the login link!" });
     } catch (error) {
       console.error(error);
-      res.status(500).json({ message: "Something went wrong" });
+      res.status(500).json({ message: error });
     }
   }
 );

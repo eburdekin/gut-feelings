@@ -2,7 +2,7 @@
 
 import express from "express";
 import dotenv from "dotenv";
-// import cors from "cors";
+import cors from "cors";
 import cookieParser from "cookie-parser";
 import { createClient } from "@supabase/supabase-js";
 
@@ -27,13 +27,13 @@ app.locals.supabase = supabase;
 // Middleware
 app.use(express.json());
 app.use(cookieParser());
-// app.use(
-//   cors({
-//     // Only accept requests from defined URL, and cookie must be included in request
-//     origin: process.env.FRONTEND_URL,
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    // Only accept requests from defined URL, and cookie must be included in request
+    origin: process.env.FRONTEND_URL,
+    credentials: true,
+  })
+);
 
 // Index
 app.get("/", async (res) => {
